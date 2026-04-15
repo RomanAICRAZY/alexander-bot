@@ -13,10 +13,11 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            /* Темный фон с сеткой (узором) в стиле "матрицы" */
-            background: radial-gradient(circle at 25% 0%, #0a0a1a 0%, #05050f 100%);
+            /* Глубокий космический градиент (фон) */
+            background: radial-gradient(ellipse at 20% 30%, #0f0c1f, #020108);
             color: #e0e0e0;
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         .container {
@@ -25,7 +26,7 @@
             padding: 0 20px;
         }
 
-        /* Узор поверх фона (имитация сетки чата MAX) */
+        /* Звездный узор (как в теме "Космос" MAX) */
         body::before {
             content: "";
             position: fixed;
@@ -34,9 +35,14 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(108, 60, 225, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(108, 60, 225, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+                radial-gradient(2px 2px at 10% 20%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90% 70%, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 1px at 30% 90%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 2px at 70% 30%, #b9a9ff, rgba(0,0,0,0)),
+                radial-gradient(2px 1px at 85% 50%, #fff, rgba(0,0,0,0));
+            background-size: 200px 200px, 300px 300px, 400px 400px, 250px 250px, 350px 350px;
+            background-repeat: no-repeat;
+            opacity: 0.6;
             pointer-events: none;
             z-index: 0;
         }
@@ -47,39 +53,38 @@
             z-index: 1;
             padding: 60px 0;
             text-align: center;
-            background: radial-gradient(ellipse at 50% 0%, rgba(108, 60, 225, 0.15), transparent 70%);
         }
 
         .max-badge {
             display: inline-block;
-            background: rgba(108, 60, 225, 0.2);
+            background: rgba(108, 60, 225, 0.25);
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(108, 60, 225, 0.5);
+            border: 1px solid rgba(108, 60, 225, 0.6);
             border-radius: 50px;
             padding: 6px 16px;
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 20px;
-            color: #b9a9ff;
-            box-shadow: 0 0 10px rgba(108, 60, 225, 0.3);
+            color: #c4b5ff;
+            box-shadow: 0 0 15px rgba(108, 60, 225, 0.4);
         }
 
         .header h1 {
             font-size: 56px;
             margin-bottom: 16px;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #b9a9ff);
+            background: linear-gradient(135deg, #ffffff, #9b8cff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 30px rgba(108, 60, 225, 0.5);
+            text-shadow: 0 0 30px rgba(155, 140, 255, 0.3);
         }
 
         .header p {
             font-size: 20px;
             opacity: 0.9;
             margin-bottom: 32px;
-            color: #b0b0d0;
+            color: #c0c0e0;
         }
 
         .button {
@@ -92,13 +97,13 @@
             font-weight: 600;
             font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(108, 60, 225, 0.5);
+            box-shadow: 0 0 20px rgba(108, 60, 225, 0.6);
             border: 1px solid rgba(255,255,255,0.2);
         }
 
         .button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(108, 60, 225, 0.8);
+            box-shadow: 0 0 35px rgba(108, 60, 225, 0.9);
             background: linear-gradient(90deg, #8a5cf0, #6C3CE1);
         }
 
@@ -107,7 +112,7 @@
             position: relative;
             z-index: 1;
             padding: 60px 0;
-            background: rgba(10, 10, 26, 0.6);
+            background: rgba(5, 3, 15, 0.4);
             backdrop-filter: blur(2px);
         }
 
@@ -127,17 +132,17 @@
         .feature-card {
             text-align: center;
             padding: 24px;
-            background: rgba(20, 20, 40, 0.6);
+            background: rgba(20, 15, 40, 0.7);
             backdrop-filter: blur(8px);
             border-radius: 16px;
-            border: 1px solid rgba(108, 60, 225, 0.3);
+            border: 1px solid rgba(108, 60, 225, 0.4);
             transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            border-color: #6C3CE1;
+            border-color: #8a5cf0;
             transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         .feature-card h3 {
@@ -147,7 +152,7 @@
         }
 
         .feature-card p {
-            color: #a0a0c0;
+            color: #b0b0d0;
         }
 
         /* Блок про минимизацию работы */
@@ -155,8 +160,8 @@
             position: relative;
             z-index: 1;
             padding: 60px 0;
-            background: linear-gradient(135deg, rgba(108, 60, 225, 0.9), rgba(45, 45, 90, 0.95));
-            backdrop-filter: blur(4px);
+            background: linear-gradient(135deg, rgba(45, 30, 90, 0.85), rgba(10, 5, 25, 0.9));
+            backdrop-filter: blur(5px);
             text-align: center;
             border-top: 1px solid rgba(108, 60, 225, 0.5);
             border-bottom: 1px solid rgba(108, 60, 225, 0.5);
@@ -166,7 +171,6 @@
             font-size: 32px;
             margin-bottom: 24px;
             color: white;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
         .minimize p {
@@ -190,26 +194,26 @@
         }
 
         .seller-card, .buyer-card {
-            background: rgba(20, 20, 40, 0.7);
+            background: rgba(15, 10, 30, 0.7);
             backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 40px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(108, 60, 225, 0.3);
+            border: 1px solid rgba(108, 60, 225, 0.4);
         }
 
         .seller-card {
-            border-top: 4px solid #6C3CE1;
+            border-top: 4px solid #8a5cf0;
         }
 
         .buyer-card {
-            border-top: 4px solid #2D2D5A;
+            border-top: 4px solid #4a4a8a;
         }
 
         .seller-card:hover, .buyer-card:hover {
             transform: translateY(-4px);
-            border-color: #6C3CE1;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: #8a5cf0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         }
 
         .seller-card h2, .buyer-card h2 {
@@ -218,15 +222,15 @@
         }
 
         .seller-card h2 {
-            color: #b9a9ff;
+            color: #c4b5ff;
         }
 
         .buyer-card h2 {
-            color: #a0a0ff;
+            color: #b0b0ff;
         }
 
         .seller-card p, .buyer-card p {
-            color: #c0c0e0;
+            color: #c0c0e8;
             margin-bottom: 24px;
             line-height: 1.6;
         }
@@ -246,11 +250,11 @@
 
         .seller-card .button-small:hover, .buyer-card .button-small:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 60, 225, 0.5);
+            box-shadow: 0 5px 20px rgba(108, 60, 225, 0.6);
         }
 
         .buyer-card .button-small {
-            background: linear-gradient(90deg, #2D2D5A, #4a4a8a);
+            background: linear-gradient(90deg, #2D2D5A, #5a5a9a);
         }
 
         /* Автоматизированные выплаты */
@@ -259,7 +263,7 @@
             z-index: 1;
             padding: 60px 0;
             text-align: center;
-            background: rgba(10, 10, 26, 0.8);
+            background: rgba(5, 3, 15, 0.6);
         }
 
         .automated h2 {
@@ -272,7 +276,7 @@
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto;
-            color: #a0a0c0;
+            color: #b0b0d0;
         }
 
         /* Контакты */
@@ -291,10 +295,10 @@
 
         .contact-link {
             display: inline-block;
-            background: rgba(20, 20, 40, 0.8);
+            background: rgba(20, 15, 40, 0.8);
             backdrop-filter: blur(4px);
-            border: 1px solid #6C3CE1;
-            color: #b9a9ff;
+            border: 1px solid #8a5cf0;
+            color: #c4b5ff;
             padding: 12px 28px;
             border-radius: 50px;
             text-decoration: none;
@@ -303,20 +307,20 @@
         }
 
         .contact-link:hover {
-            background-color: #6C3CE1;
+            background: #8a5cf0;
             color: white;
-            box-shadow: 0 0 15px rgba(108, 60, 225, 0.5);
+            box-shadow: 0 0 20px rgba(138, 92, 240, 0.5);
         }
 
         /* Подвал */
         .footer {
             position: relative;
             z-index: 1;
-            background: rgba(5, 5, 15, 0.9);
+            background: rgba(2, 1, 8, 0.9);
             text-align: center;
             padding: 24px 0;
             font-size: 14px;
-            color: #606080;
+            color: #606090;
             border-top: 1px solid rgba(108, 60, 225, 0.3);
         }
 
@@ -430,12 +434,4 @@
         </div>
     </div>
 
-    <script>
-        // Ссылки нужно будет заменить на реальные после создания бота
-        document.getElementById('botLink').href = '#';
-        document.getElementById('sellerLink').href = '#';
-        document.getElementById('buyerLink').href = '#';
-        document.getElementById('adminLink').href = '#';
-    </script>
-</body>
-</html>
+    <script
